@@ -1,0 +1,30 @@
+This will be a Platform for the vacation rental cleaning company I work for (Turnovur) to keep
+track of it's contractor's from onboarding to schedule updates.
+
+Contractors will have the ability to sign up or log in with validations.
+
+After they log in, they will be directed to their profile page that will show some of their information
+and have some action items at the bottom. 
+
+(This feature would be nice)Contractors can submit time off. Only the first text input and 
+date selector would be mandatory to submit the form.
+
+Contractors can also view their onboarding checklist and complete the items on that list. Once 
+the list is complete their status will change to "Training Completed"
+
+Contractors will have the ability to edit their information
+
+Contractors can view Team Announcements that have been submitted by the admin
+
+Contractors can set and update their availability as well as see the status of their time-off requests.
+
+Admin will have seperate views and capabilities. Admin must have verified credentials.
+
+Admin will be able to view and submit announcments for the team.
+
+Admin will be able to see a list of the current contractors along with their onbaording status, their 
+start date, and their email.
+
+Admin will be able to view their availability along with upcoming approved time off sorted by date
+
+Admin will have the ability to approve or deny time off requests.
