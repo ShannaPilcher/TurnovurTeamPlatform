@@ -37,27 +37,25 @@ const UserSchema = new mongoose.Schema({
             message: "Please enter a valid email"
         }
     },
-    address: {
-        streetAddress: {
-            type: String,
-            required: [true, "Address is required"]
-        },
-        city: {
-            type: String,
-            required: [true, "City is required"]
-        },
-        state: {
-            type: String,
-            uppercase: true,
-            required: [true, "State is required"],
-            enum: statesArray
-        },
-        zipCode: {
-            type: Number,
-            required: [true, "Zip Code is required"],
-            min: [10000, "Zip Code must be 5 characters long"],
-            max: [99999, "Zip Code must be 5 characters long"]
-        }
+    streetAddress: {
+        type: String,
+        required: [true, "Address is required"]
+    },
+    city: {
+        type: String,
+        required: [true, "City is required"]
+    },
+    state: {
+        type: String,
+        uppercase: true,
+        required: [true, "State is required"],
+        enum: statesArray
+    },
+    zipCode: {
+        type: Number,
+        required: [true, "Zip Code is required"],
+        min: [10000, "Zip Code must be 5 characters long"],
+        max: [99999, "Zip Code must be 5 characters long"]
     },
     password: {
         type: String,
@@ -66,7 +64,15 @@ const UserSchema = new mongoose.Schema({
     },
     profileURL: {
         type: String,
-    }
+    },
+    completedOne: {type: Boolean, default: false},
+    completedTwo: {type: Boolean, default: false},
+    completedThree: {type: Boolean, default: false},
+    completedFour: {type: Boolean, default: false},
+    completedFive: {type: Boolean, default: false},
+    completedSix: {type: Boolean, default: false},
+    completedSeven: {type: Boolean, default: false},
+    completedAll: {type: Boolean, default: false}
 }, {timestamps: true})
 
 UserSchema.virtual('confirmPassword')
