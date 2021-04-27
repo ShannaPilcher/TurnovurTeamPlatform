@@ -64,6 +64,7 @@ const UserSchema = new mongoose.Schema({
     },
     profileURL: {
         type: String,
+        default: "https://www.pngix.com/pngfile/middle/80-805016_png-file-svg-my-profile-icon-png-transparent.png"
     },
     completedOne: {type: Boolean, default: false},
     completedTwo: {type: Boolean, default: false},
@@ -72,7 +73,13 @@ const UserSchema = new mongoose.Schema({
     completedFive: {type: Boolean, default: false},
     completedSix: {type: Boolean, default: false},
     completedSeven: {type: Boolean, default: false},
-    completedAll: {type: Boolean, default: false}
+    monday: {type: Boolean, default: false},
+    tuesday: {type: Boolean, default: false},
+    wednesday: {type: Boolean, default: false},
+    thursday: {type: Boolean, default: false},
+    friday: {type: Boolean, default: false},
+    saturday: {type: Boolean, default: false},
+    sunday: {type: Boolean, default: false},
 }, {timestamps: true})
 
 UserSchema.virtual('confirmPassword')

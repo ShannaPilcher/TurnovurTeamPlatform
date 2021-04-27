@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import EditForm from '../components/EditForm';
+import UserAvailabilityForm from '../components/UserAvailabilityForm'
 import axios from 'axios';
 import { navigate } from '@reach/router'
 
-const Edit = (props) => {
+const Availability = (props) => {
     const [user, setUser] = useState("");
     const [loaded, setLoaded] = useState(false);
     const [errors, setErrors] = useState({});
@@ -24,7 +24,6 @@ const Edit = (props) => {
         axios.put("http://localhost:8000/api/users/" + props.id, user, {withCredentials: true})
             .then(res => {
                 console.log(res)
-                setUser(res)
                 navigate('/profile')
             })
             .catch(err => {
@@ -33,26 +32,26 @@ const Edit = (props) => {
     }
 
     return(
-        <div className="Edit" >
-            <h2 className="title" >Edit Profile</h2>
+        <div className="Availability" >
+            <h2 className="title" >Availability</h2>
+            <p>
+                Please choose days you are available to work at least between 11am and 4pm. 
+                Please leave any notes you would like admin to be considerate of when scheduling you.
+            </p><br/>
             {loaded && (
-                <EditForm
-                    initialImage= {user.profileURL}
-                    initialFirstName= {user.firstName}
-                    initialLastName= {user.lastName}
-                    initialPhoneNumber= {user.phoneNumber}
-                    initialEmail= {user.email}
-                    initialStreetAddress= {user.streetAddress}
-                    initialCity= {user.city}
-                    initialZipCode= {user.zipCode}
-                    initialstate= {user.state}
-                    onSubmitProp = {updateUser}
-                    errors= {errors}
-                    id= {user._id}
+                <UserAvailabilityForm
+                    initialMonday= {user.monday}
+                    initialTuesday= {user.tuesday}
+                    initialWednesday= {user.wednesday}
+                    initialThursday= {user.thursday}
+                    initialFriday= {user.friday}
+                    initialSaturday= {user.saturday}
+                    initialSunday= {user.sunday}
+                    onSubmitProp= {updateUser}
                 />
             )}
         </div>
     )
 }
 
-export default Edit
+export default Availability

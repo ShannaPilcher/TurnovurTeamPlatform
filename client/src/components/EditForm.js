@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { navigate } from '@reach/router'
 
 const EditForm = (props) => {
     const {
@@ -44,7 +45,7 @@ const EditForm = (props) => {
     }
 
     return (
-        <div>
+        <div className="editForm">
             <form onSubmit={onSubmitHandler}>
                 <div>
                     <img className="profileImage" src={profileURL} alt="Profile Picture"/><br/>
@@ -237,9 +238,8 @@ const EditForm = (props) => {
                         : null
                     }
                 </div>
-                <div>
-                    <input type="submit"/>
-                </div>
+                <button onClick = {() => navigate("/profile")}>Cancel</button>
+                <button type= "submit">Update</button>
             </form>
         </div>
     )

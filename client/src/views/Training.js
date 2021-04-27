@@ -32,8 +32,8 @@ const Training = (props) => {
     }
 
     return(
-        <div>
-            <h2>LET'S GET STARTED</h2>
+        <div className="Training">
+            <h2 className="title" >LET'S GET STARTED</h2>
             <p>
                 Welcome to Turnovur! We are excited to have you join our team. 
                 In addition to in person traning provided by the cleaning supervisor, please complete

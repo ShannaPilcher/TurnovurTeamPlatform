@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { navigate } from '@reach/router';
 
-const UserLogin = (props) => {
+const UserLogin = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -12,42 +12,40 @@ const UserLogin = (props) => {
         axios.post("http://localhost:8000/api/user/login", {
             email: email,
             password: password,
-        }, {withCredentials: true})
+        }, { withCredentials: true })
             .then((res) => {
                 console.log(res.data);
                 navigate("/profile")
             })
-            .catch((err => {
+            .catch(err => {
                 console.log(err);
-                setError(err.res.data.msg)
-            }));
+                setError(err.response.data.msg)
+            });
     };
     return (
-        <div>
-            <h2>Welcome Back</h2>
-            <form onSubmit={login}>
+        <div className= "UserLogin">
+            <h2 className="title" >Welcome Back</h2>
+            <form className= "login" onSubmit={login}>
                 <div>
-                    <label>Email</label>
                     <input
                         type= "text"
                         name= "email"
+                        placeholder= "Email"
                         value= {email}
                         onChange = {(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div>
-                    <label>Password</label>
                     <input
-                        type= "text"
+                        type= "password"
                         name= "password"
+                        placeholder= "Password"
                         value= {password}
                         onChange = {(e) => setPassword(e.target.value)}
                     />
                 </div>
                 <div>
-                    <button
-                        type= "submit"
-                    >Log In</button>
+                    <button type= "submit">Log In</button>
                 </div>
             </form>
         </div>

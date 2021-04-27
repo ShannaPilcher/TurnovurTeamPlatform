@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { navigate } from '@reach/router'
 
 const UserTrainingForm = (props) => {
     const { 
@@ -21,18 +21,6 @@ const UserTrainingForm = (props) => {
     const [completedSix, setCompletedSix] = useState(initialSix);
     const [completedSeven, setCompletedSeven] = useState(initialSeven);
 
-    const completeTraining = () => {
-        if(completedOne === true && 
-            completedTwo === true &&
-            completedThree === true &&
-            completedFour === true &&
-            completedFive === true &&
-            completedSix === true &&
-            completedSeven === true
-        ) {
-            setCompletedAll(true)
-        }
-    }
     const onSubmitHandler = e => {
         e.preventDefault();
         onSubmitProp({
@@ -46,7 +34,7 @@ const UserTrainingForm = (props) => {
         });
     }
     return(
-        <div>
+        <div className="trainingForm" >
             <form onSubmit= {onSubmitHandler}>
                 <div>
                     <input 
@@ -111,13 +99,9 @@ const UserTrainingForm = (props) => {
                     />
                     <label>Fill out your availability</label>
                 </div>
-                <input type="submit" />
+                <button onClick = {() => navigate("/profile")}>Cancel</button>
+                <button type= "submit">Update</button>
             </form>
-            {
-                completedAll ?
-                <p className="complete">Congratulations! You've finished your onboarding!</p>
-                : null
-            }
         </div>
     )
 }

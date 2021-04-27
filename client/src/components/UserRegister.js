@@ -58,24 +58,24 @@ const UserRegister = (props) => {
     };
 
     return (
-        <div>
+        <div className="Register" >
             <header>
                 <p>Already a Member?</p>
                 <Link to={'/login'}>Log In</Link>
             </header>
-            <h2>Welcome to the Turnovur Team</h2>
+            <h2 className="title" >Welcome to the Turnovur Team</h2>
             {
                 confirmReg ? <p>{confirmReg}</p>
                 : null
             }
-            <form onSubmit={register}>
-                <div>
+            <form className="register" onSubmit={register}>
+                <div className="columnOne">
                     <input
                         type="text"
                         name="First Name"
                         label="First Name"
                         value={firstName}
-                        onClick = {(e) => setFirstName("")}
+                        placeholder= "First Name"
                         onChange= {(e) => setFirstName(e.target.value)}
                     />
                     {
@@ -84,12 +84,12 @@ const UserRegister = (props) => {
                     : null
                     }
                 </div>
-                <div>
+                <div className="columnTwo">
                     <input 
                         type= "Text"
                         name= "Last Name"
                         value= {lastName}
-                        onClick = {(e) => setLastName("")}
+                        placeholder= "Last Name"
                         onChange= {(e) => setLastName(e.target.value)}
                     />
                     {
@@ -98,13 +98,13 @@ const UserRegister = (props) => {
                         : null
                     }
                 </div>
-                <div>
+                <div className="columnOne">
                     <input 
                         type= "Text"
                         id= "Phone Number"
                         name= "Phone Number"
                         value= {phoneNumber}
-                        onClick = {(e) => setPhoneNumber("")}
+                        placeholder= "Phone Number"
                         onChange= {(e) => setPhoneNumber(e.target.value)}
                     />
                     {
@@ -113,7 +113,7 @@ const UserRegister = (props) => {
                         : null
                     }
                 </div>
-                <div>
+                <div className="columnTwo">
                     <select
                         name= "Role"
                         value= {role}
@@ -128,7 +128,7 @@ const UserRegister = (props) => {
                         type= "Text"
                         name= "Email"
                         value= {email}
-                        onClick = {(e) => setEmail("")}
+                        placeholder= "Email"
                         onChange= {(e) => setEmail(e.target.value)}
                     />
                     {
@@ -142,7 +142,7 @@ const UserRegister = (props) => {
                         type= "Text"
                         name= "Street Address"
                         value= {streetAddress}
-                        onClick = {(e) => setStreetAddress("")}
+                        placeholder= "Street Address"
                         onChange= {(e) => setStreetAddress(e.target.value)}
                     />
                     {
@@ -156,7 +156,7 @@ const UserRegister = (props) => {
                         type= "Text"
                         name= "City"
                         value= {city}
-                        onClick = {(e) => setCity("")}
+                        placeholder= "City"
                         onChange= {(e) => setCity(e.target.value)}
                     />
                     {
@@ -235,7 +235,7 @@ const UserRegister = (props) => {
                         type= "number"
                         name= "Zip Code"
                         value= {zipCode}
-                        onClick = {(e) => setZipCode()}
+                        placeholder= "Zip Code"
                         onChange= {(e) => setZipCode(e.target.value)}
                     />
                     {
@@ -244,12 +244,12 @@ const UserRegister = (props) => {
                         : null
                     }
                 </div>
-                <div>
+                <div className="full-width" >
                     <input 
-                        type= "Text"
+                        type= "password"
                         name= "Password"
                         value= {password}
-                        onClick = {(e) => setPassword("")}
+                        placeholder= "Password"
                         onChange= {(e) => setPassword(e.target.value)}
                     />
                     {
@@ -258,12 +258,12 @@ const UserRegister = (props) => {
                         : null
                     }
                 </div>
-                <div>
+                <div className="full-width" >
                     <input 
-                        type= "Text"
+                        type= "password"
                         name= "Confirm Password"
                         value= {confirmPassword}
-                        onClick = {(e) => setConfirmPassword("")}
+                        placeholder= "Confirm Password"
                         onChange= {(e) => setConfirmPassword(e.target.value)}
                     />
                     {
@@ -273,7 +273,7 @@ const UserRegister = (props) => {
                     }
                 </div>
                 <div>
-                    <input type="submit"/>
+                    <button type= "submit">Log In</button>
                 </div>
             </form>
         </div>
